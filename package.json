@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "monorepo-seed",
+  "workspaces": [
+    "packages/*",
+    "core/*",
+    "commmon/*",
+    "routes/*",
+    "services/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace @monorepo-seed/client start",
+    "server": "yarn workspace @monorepo-seed/server start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
